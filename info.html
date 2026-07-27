@@ -3,24 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お取引の流れ | 奈良県のトイプードル専門ブリーダー</title>
+    <title>お取引の流れ | petit poodle</title>
     <style>
-        /* 基本スタイル設定 */
         :root {
-            --main-color: #5a4b41;      /* メインのダークブラウン */
-            --bg-color: #fcfbfa;        /* 温かみのあるオフホワイト */
-            --accent-color: #a38874;    /* アクセントのベージュ */
-            --text-color: #333333;      /* 文字色 */
-            --card-bg: #ffffff;         /* カード背景 */
-            --border-color: #e8e3df;    /* 枠線カラー */
+            --main-color: #5a4b41;
+            --bg-color: #fcfbfa;
+            --accent-color: #a38874;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e8e3df;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             background-color: var(--bg-color);
@@ -28,142 +22,111 @@
             line-height: 1.8;
             padding: 20px 10px;
         }
-
         .container {
             max-width: 800px;
             margin: 0 auto;
             background: var(--card-bg);
             padding: 40px 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
             border: 1px solid var(--border-color);
         }
-
-        /* ヘッダー */
+        
+        /* ヘッダー（小文字表記・リンクなし） */
         header {
             text-align: center;
-            padding-bottom: 30px;
+            padding-bottom: 20px;
             border-bottom: 2px solid var(--accent-color);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
-
         header h1 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--main-color);
             letter-spacing: 0.05em;
-            margin-bottom: 8px;
+            text-transform: lowercase;
         }
-
         header p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #666;
+            margin-top: 4px;
         }
 
-        /* セクションタイトル */
-        h2.section-title {
-            font-size: 1.4rem;
-            color: var(--main-color);
-            margin: 40px 0 20px;
-            padding-left: 12px;
-            border-left: 4px solid var(--accent-color);
+        .intro {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
         }
 
-        /* ステップ（お取引の流れ） */
+        /* ステップカード */
         .step-list {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
-
         .step-card {
             border: 1px solid var(--border-color);
-            border-radius: 6px;
+            border-radius: 8px;
             padding: 20px;
             background-color: #fff;
         }
-
         .step-header {
             display: flex;
             align-items: center;
             gap: 12px;
             margin-bottom: 12px;
         }
-
         .step-number {
             background-color: var(--main-color);
             color: #fff;
             font-weight: bold;
             font-size: 0.85rem;
-            padding: 3px 10px;
+            padding: 3px 12px;
             border-radius: 20px;
         }
-
         .step-title {
             font-size: 1.15rem;
             font-weight: bold;
             color: var(--main-color);
         }
 
-        /* 注記・ボックス */
         .info-box {
             background-color: #f7f5f2;
             border: 1px solid #e0d8d0;
             padding: 15px;
             border-radius: 6px;
-            margin-top: 10px;
+            margin-top: 12px;
             font-size: 0.9rem;
         }
-
         .info-box ul {
             padding-left: 20px;
-            margin-top: 5px;
+            margin-top: 6px;
+        }
+        .info-box li {
+            margin-bottom: 4px;
         }
 
-        /* 表（価格・諸費用） */
-        .price-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        .price-table th, .price-table td {
-            border: 1px solid var(--border-color);
-            padding: 12px 15px;
-            text-align: left;
-            font-size: 0.95rem;
-        }
-
-        .price-table th {
-            background-color: #f7f5f2;
+        /* Instagramリンク用スタイル */
+        .insta-link {
             color: var(--main-color);
-            width: 30%;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .insta-link:hover {
+            color: var(--accent-color);
         }
 
-        /* フッター */
         footer {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 40px;
             padding-top: 20px;
             border-top: 1px solid var(--border-color);
             font-size: 0.85rem;
             color: #888;
         }
 
-        /* レスポンシブ調整（スマホ対応） */
         @media (max-width: 600px) {
-            .container {
-                padding: 20px 15px;
-            }
-            header h1 {
-                font-size: 1.4rem;
-            }
-            .price-table th, .price-table td {
-                display: block;
-                width: 100%;
-            }
-            .price-table th {
-                background-color: #f0eae5;
-            }
+            .container { padding: 25px 15px; }
+            header h1 { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -171,94 +134,88 @@
 
 <div class="container">
     <header>
-        <h1>お取引の流れ</h1>
-        <nav>
-            <a href="index.html">トップ</a>
-            <a href="info.html">お取引の流れ</a>
-            <a href="hyouki.html">特定商取引法表記</a>
-            <a href="contact.html">お問い合わせ</a>
-        </nav>
+        <h1>petit poodle</h1>
+        <p>奈良県のトイプードル専門ブリーダー</p>
     </header>
 
     <main>
-        <p>当犬舎での子犬のお迎えをご検討いただき、ありがとうございます。<br>お問い合わせからお引き渡しまでの流れをご案内いたします。</p>
+        <div class="intro">
+            <p>当犬舎の子犬にご興味をお持ちいただき、ありがとうございます。<br>
+            新しいご家族を安心してお迎えいただけるよう、お問い合わせからお引き渡しまでの流れをご案内いたします。</p>
+        </div>
 
         <section class="step-list">
-            <!-- Step 1 -->
+            <!-- STEP 01 -->
             <div class="step-card">
                 <div class="step-header">
                     <span class="step-number">STEP 01</span>
                     <span class="step-title">お問い合わせ</span>
                 </div>
-                <p>気になる子犬がおりましたら、お問い合わせフォームまたはInstagramのDMにてお気軽にお問い合わせください。</p>
+                <p>
+                    instagramの投稿をみていただき気になる子犬がおりましたら、instagramのDMよりご連絡ください。
+                    <a href="https://www.instagram.com/petit.poodle_" target="_blank" rel="noopener noreferrer" class="insta-link">Instagram（@petit.poodle_）のDM</a> 
+                    
+                </p>
                 <div class="info-box">
-                    <strong>ご記載いただく内容：</strong>
+                    <strong>instagramのDMへご記載いただきたい内容：</strong>
                     <ul>
-                        <li>お名前・ご住所・お電話番号</li>
-                        <li>メールアドレス（※自動返信が届かない場合は設定をご確認ください）</li>
+                        <li>お名前、ご住所、お電話番号</li>
+                        <li>ご希望の子犬（仮名または探しているタイプなど）</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Step 2 -->
+            <!-- STEP 02 -->
             <div class="step-card">
                 <div class="step-header">
                     <span class="step-number">STEP 02</span>
                     <span class="step-title">ご見学</span>
                 </div>
-                <p>見学は**完全予約制**（購入意志のある方に限定）となっております。一般家庭での育成環境のため、事前のご予約をお願いいたします。</p>
+                <p>子犬との素敵な出会いにしていただくため、事前のご予約をお願いしております。ご希望のお日にちや時間帯はお気軽にご相談ください。</p>
                 <div class="info-box">
-                    <strong>【予約可能日時】土・日・祝日 11:00 ～ 16:00</strong>
-                    <ul style="margin-top: 8px;">
-                        <li>衛生管理のため、他のペットショップやブリーダー様へ立ち寄ってからの見学はご遠慮ください。</li>
-                        <li>他家ペット同伴での見学はお断りしております。</li>
-                        <li>当犬舎での見学が必須となります（出張不可）。</li>
+                    <strong>【ご見学について】</strong>
+                    <ul>
+                        <li>まだ体力の少ない幼い子犬の体調と安全を第一に考え、**対面でのご見学時間は30分程度**とさせていただいております。</li>
+                        <li>遠方の方やご都合が難しい方には、**オンラインでのご見学**も承っております。お気軽にお申し付けください。</li>
+                        <li>子犬たちの健康を守るため、見学当日は他のペットショップ様やブリーダー様への立ち寄りを控えてお越しいただけますようご協力をお願いいたします。</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Step 3 -->
+            <!-- STEP 03 -->
             <div class="step-card">
                 <div class="step-header">
                     <span class="step-number">STEP 03</span>
                     <span class="step-title">ご予約</span>
                 </div>
-                <p>ご見学時、または翌日までに購入確定のお返事をお願いいたします。<strong>予約金 生体価格の30％</strong>のお振り込みをもって予約成立となります。</p>
-                <p style="font-size: 0.85rem; color: #d9534f; margin-top: 8px;">※お客様都合によるキャンセル時の予約金返金はできかねますのでご了承ください。</p>
+                <p>ご見学後、お迎えのご意思につきましては**【ご見学の翌日まで】**にお知らせいただけますようお願いいたします。</p>
+                <p style="margin-top: 8px;">
+                    ご予約金として**生体価格の30%**をお納めいただいた時点で「ご予約確定」となり、該当する子犬の募集は終了とさせていただきます。
+                </p>
+                <div class="info-box">
+                    <p style="font-size: 0.85rem; color: #5a4b41;">
+                        ※ご見学翌日までにご連絡がない場合、またはお見送りされる場合は、大変恐縮ですが他のお客様へのご案内（募集再開）をさせていただきます。あらかじめご了承ください。<br>
+                        ※ご予約成立後は他のお客様からの募集を停止するため、お客様のご都合によるキャンセルの場合はご予約金の返金がいたしかねます。
+                    </p>
+                </div>
             </div>
 
-            <!-- Step 4 -->
+            <!-- STEP 04 -->
             <div class="step-card">
                 <div class="step-header">
                     <span class="step-number">STEP 04</span>
                     <span class="step-title">お支払い・お引き渡し</span>
                 </div>
-                <p>生後57日以降、1回目のワクチン接種・健康診断を終えた後にお引き渡しとなります。残金はお引き渡し3日前までにお振込みください。</p>
+                <p>生後57日以降、マイクロチップ装着、初回ワクチン接種と獣医師による健康診断を終えた後、万全の状態でお渡しいたします。</p>
+                <div class="info-box">
+                    <strong>【お引き渡し方法とお支払い】</strong>
+                    <ul>
+                        <li>当犬舎では子犬の安全を考慮し、**直接のお引き取りのみ**とさせていただいております。（空輸・陸送などの輸送は行っておりません。）</li>
+                        <li>残金は**お迎え当日の現金支払い**、または**前日までの銀行振込**にてお願いします。</li>
+                    </ul>
+                </div>
             </div>
         </section>
-
-        <!-- 料金・詳細情報 -->
-        <h2 class="section-title">販売価格・諸費用</h2>
-        <table class="price-table">
-            <tr>
-                <th>販売価格に含まれるもの</th>
-                <td>消費税、血統書申請料</td>
-            </tr>
-            <tr>
-                <th>別途費用</th>
-                <td>ワクチン接種・マイクロチップ装着料（9,000円）<br>輸送費（空輸・陸送の場合：10,000円〜20,000円）</td>
-            </tr>
-        </table>
-
-        <!-- 保証・注意事項 -->
-        <h2 class="section-title">保証・注意事項</h2>
-        <div class="info-box">
-            <strong>■ 返品・キャンセルについて</strong>
-            <p>引き渡し後の返品・交換・クーリングオフには応じられません。また、成長に伴う変化（サイズ、毛色、性格、噛み合わせ、膝蓋骨脱臼等）の補償はいたしかねます。</p>
-            <br>
-            <strong>■ 生命保証</strong>
-            <p>お引き渡しより2週間以内に、先天性疾患による死亡と診断された場合（獣医師の診断書が必要）に限り、販売価格の全額を返金いたします。</p>
-        </div>
     </main>
 
     <footer>
