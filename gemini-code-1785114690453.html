@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お取引の流れ | トイプードル専門ブリーダー</title>
+    <style>
+        /* 基本スタイル設定 */
+        :root {
+            --main-color: #5a4b41;      /* メインのダークブラウン */
+            --bg-color: #fcfbfa;        /* 温かみのあるオフホワイト */
+            --accent-color: #a38874;    /* アクセントのベージュ */
+            --text-color: #333333;      /* 文字色 */
+            --card-bg: #ffffff;         /* カード背景 */
+            --border-color: #e8e3df;    /* 枠線カラー */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            padding: 20px 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+        }
+
+        /* ヘッダー */
+        header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--accent-color);
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: var(--main-color);
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* セクションタイトル */
+        h2.section-title {
+            font-size: 1.4rem;
+            color: var(--main-color);
+            margin: 40px 0 20px;
+            padding-left: 12px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        /* ステップ（お取引の流れ） */
+        .step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .step-card {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .step-number {
+            background-color: var(--main-color);
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.85rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+
+        .step-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: var(--main-color);
+        }
+
+        /* 注記・ボックス */
+        .info-box {
+            background-color: #f7f5f2;
+            border: 1px solid #e0d8d0;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .info-box ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        /* 表（価格・諸費用） */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .price-table th, .price-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .price-table th {
+            background-color: #f7f5f2;
+            color: var(--main-color);
+            width: 30%;
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* レスポンシブ調整（スマホ対応） */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+            header h1 {
+                font-size: 1.4rem;
+            }
+            .price-table th, .price-table td {
+                display: block;
+                width: 100%;
+            }
+            .price-table th {
+                background-color: #f0eae5;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>お取引の流れ</h1>
+        <p>TOY POODLE BREEDER</p>
+    </header>
+
+    <main>
+        <p>当犬舎での子犬のお迎えをご検討いただき、ありがとうございます。<br>お問い合わせからお引き渡しまでの流れをご案内いたします。</p>
+
+        <section class="step-list">
+            <!-- Step 1 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-number">STEP 01</span>
+                    <span class="step-title">お問い合わせ</span>
+                </div>
+                <p>気になる子犬がおりましたら、お問い合わせフォームまたはInstagramのDMにてお気軽にお問い合わせください。</p>
+                <div class="info-box">
+                    <strong>ご記載いただく内容：</strong>
+                    <ul>
+                        <li>お名前・ご住所・お電話番号</li>
+                        <li>メールアドレス（※自動返信が届かない場合は設定をご確認ください）</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-number">STEP 02</span>
+                    <span class="step-title">ご見学</span>
+                </div>
+                <p>見学は**完全予約制**（購入意志のある方に限定）となっております。一般家庭での育成環境のため、事前のご予約をお願いいたします。</p>
+                <div class="info-box">
+                    <strong>【予約可能日時】土・日・祝日 11:00 ～ 16:00</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>衛生管理のため、他のペットショップやブリーダー様へ立ち寄ってからの見学はご遠慮ください。</li>
+                        <li>他家ペット同伴での見学はお断りしております。</li>
+                        <li>当犬舎での見学が必須となります（出張不可）。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-number">STEP 03</span>
+                    <span class="step-title">ご予約</span>
+                </div>
+                <p>ご見学時、または翌日までに購入確定のお返事をお願いいたします。<strong>予約金 50,000円</strong>のお振り込みをもって予約成立となります。</p>
+                <p style="font-size: 0.85rem; color: #d9534f; margin-top: 8px;">※お客様都合によるキャンセル時の予約金返金はできかねますのでご了承ください。</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <span class="step-number">STEP 04</span>
+                    <span class="step-title">お支払い・お引き渡し</span>
+                </div>
+                <p>生後57日以降、1回目のワクチン接種・健康診断を終えた後にお引き渡しとなります。残金はお引き渡し3日前までにお振込みください。</p>
+            </div>
+        </section>
+
+        <!-- 料金・詳細情報 -->
+        <h2 class="section-title">販売価格・諸費用</h2>
+        <table class="price-table">
+            <tr>
+                <th>販売価格に含まれるもの</th>
+                <td>消費税、血統書申請料</td>
+            </tr>
+            <tr>
+                <th>別途費用</th>
+                <td>ワクチン接種・マイクロチップ装着料（9,000円）<br>輸送費（空輸・陸送の場合：10,000円〜20,000円）</td>
+            </tr>
+        </table>
+
+        <!-- 保証・注意事項 -->
+        <h2 class="section-title">保証・注意事項</h2>
+        <div class="info-box">
+            <strong>■ 返品・キャンセルについて</strong>
+            <p>引き渡し後の返品・交換・クーリングオフには応じられません。また、成長に伴う変化（サイズ、毛色、性格、噛み合わせ、膝蓋骨脱臼等）の補償はいたしかねます。</p>
+            <br>
+            <strong>■ 生命保証</strong>
+            <p>お引き渡しより2週間以内に、先天性疾患による死亡と診断された場合（獣医師の診断書が必要）に限り、販売価格の全額を返金いたします。</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; ブリーダー名 All Rights Reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>
