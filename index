@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ご家族募集中 | petit poodle</title>
+    <style>
+        :root {
+            --main-color: #5a4b41;
+            --bg-color: #fcfbfa;
+            --accent-color: #a38874;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --border-color: #e8e3df;
+            --status-bg: #e2f0d9;
+            --status-text: #385723;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            padding: 20px 10px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+        }
+        
+        /* 統一ヘッダー */
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--accent-color);
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-size: 2rem;
+            color: var(--main-color);
+            letter-spacing: 0.05em;
+            text-transform: lowercase;
+        }
+        header p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        /* ナビゲーションメニュー */
+        .global-nav {
+            margin-top: 15px;
+        }
+        .global-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .global-nav a {
+            color: var(--main-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            background-color: #fff;
+            transition: all 0.2s ease;
+        }
+        .global-nav a:hover,
+        .global-nav a.active {
+            background-color: var(--main-color);
+            color: #fff;
+            border-color: var(--main-color);
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 1.4rem;
+            color: var(--main-color);
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+
+        /* 子犬カード */
+        .puppy-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .puppy-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .puppy-card {
+                flex-direction: row;
+            }
+        }
+
+        .puppy-photo {
+            flex: 1;
+            background-color: #f0eae5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+            max-height: 380px;
+            overflow: hidden;
+        }
+
+        .puppy-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .puppy-info {
+            flex: 1.2;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: var(--status-bg);
+            color: var(--status-text);
+            font-weight: bold;
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            align-self: flex-start;
+        }
+
+        .puppy-name {
+            font-size: 1.3rem;
+            color: var(--main-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .info-table th {
+            text-align: left;
+            width: 30%;
+            padding: 6px 0;
+            color: #666;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .info-table td {
+            width: 70%;
+            padding: 6px 0;
+            border-bottom: 1px dashed var(--border-color);
+            font-weight: 500;
+        }
+
+        .puppy-description {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #444;
+            background-color: #fcfbfa;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 20px 12px; }
+            .puppy-info { padding: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>petit poodle</h1>
+        <p>奈良県のトイプードル専門ブリーダー</p>
+        <nav class="global-nav">
+            <ul>
+                <li><a href="index.html" class="active">ご家族募集中</a></li>
+                <li><a href="info.html">お取引の流れ</a></li>
+                <li><a href="https://www.instagram.com/petit.poodle_" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="page-title">ご家族募集中の子犬たち</h2>
+        <div class="intro">
+            <p>愛情たっぷりの一般家庭環境で元気に育っている子犬たちです。<br>
+            ご見学や価格等のお問い合わせは、InstagramのDMよりお気軽にご連絡ください。</p>
+        </div>
+
+        <div class="puppy-grid">
+
+            <!-- 子犬 1頭目 -->
+            <div class="puppy-card">
+                <div class="puppy-photo">
+                    <img src="puppy1.jpg" alt="レッドの男の子">
+                </div>
+                <div class="puppy-info">
+                    <div>
+                        <span class="status-badge">ご家族募集中</span>
+                        <div class="puppy-name">レッドの男の子</div>
+                        <table class="info-table">
+                            <tr>
+                                <th>生年月日</th>
+                                <td>2026年〇月〇日</td>
+                            </tr>
+                            <tr>
+                                <th>毛色</th>
+                                <td>レッド</td>
+                            </tr>
+                            <tr>
+                                <th>性別</th>
+                                <td>男の子（♂）</td>
+                            </tr>
+                            <tr>
+                                <th>予想サイズ</th>
+                                <td>タイニー〜トイサイズ</td>
+                            </tr>
+                            <tr>
+                                <th>販売価格</th>
+                                <td><span style="font-size: 0.95rem; color: #5a4b41; font-weight: bold;">価格はお問い合わせください</span></td>
+                            </tr>
+                        </table>
+                        <div class="puppy-description">
+                            元気いっぱいで人懐っこい性格の男の子です。クリクリのお目目と綺麗な毛並みが魅力です。離乳食もよく食べてすくすく成長中！
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 子犬 2頭目 -->
+            <div class="puppy-card">
+                <div class="puppy-photo">
+                    <img src="puppy2.jpg" alt="アプリコットの女の子">
+                </div>
+                <div class="puppy-info">
+                    <div>
+                        <span class="status-badge">ご家族募集中</span>
+                        <div class="puppy-name">アプリコットの女の子</div>
+                        <table class="info-table">
+                            <tr>
+                                <th>生年月日</th>
+                                <td>2026年〇月〇日</td>
+                            </tr>
+                            <tr>
+                                <th>毛色</th>
+                                <td>アプリコット</td>
+                            </tr>
+                            <tr>
+                                <th>性別</th>
+                                <td>女の子（♀）</td>
+                            </tr>
+                            <tr>
+                                <th>予想サイズ</th>
+                                <td>ティーカップサイズ</td>
+                            </tr>
+                            <tr>
+                                <th>販売価格</th>
+                                <td><span style="font-size: 0.95rem; color: #5a4b41; font-weight: bold;">価格はお問い合わせください</span></td>
+                            </tr>
+                        </table>
+                        <div class="puppy-description">
+                            おっとり優しい性格のお嬢様タイプです。小ぶりな体つきでお顔の詰まったキュートな表情をしています。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 子犬 3頭目 -->
+            <div class="puppy-card">
+                <div class="puppy-photo">
+                    <img src="puppy3.jpg" alt="レッドの女の子">
+                </div>
+                <div class="puppy-info">
+                    <div>
+                        <span class="status-badge" style="background-color: #fce4d6; color: #c65911;">商談中</span>
+                        <div class="puppy-name">レッドの女の子</div>
+                        <table class="info-table">
+                            <tr>
+                                <th>生年月日</th>
+                                <td>2026年〇月〇日</td>
+                            </tr>
+                            <tr>
+                                <th>毛色</th>
+                                <td>レッド</td>
+                            </tr>
+                            <tr>
+                                <th>性別</th>
+                                <td>女の子（♀）</td>
+                            </tr>
+                            <tr>
+                                <th>予想サイズ</th>
+                                <td>タイニーサイズ</td>
+                            </tr>
+                            <tr>
+                                <th>販売価格</th>
+                                <td><span style="font-size: 0.95rem; color: #5a4b41; font-weight: bold;">価格はお問い合わせください</span></td>
+                            </tr>
+                        </table>
+                        <div class="puppy-description">
+                            遊ぶのが大好きでいつもシッポをフリフリしてくれる可愛い子です。（※現在ご見学・商談中となっております）
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 子犬 4頭目 -->
+            <div class="puppy-card">
+                <div class="puppy-photo">
+                    <img src="puppy4.jpg" alt="クリームの男の子">
+                </div>
+                <div class="puppy-info">
+                    <div>
+                        <span class="status-badge">ご家族募集中</span>
+                        <div class="puppy-name">クリームの男の子</div>
+                        <table class="info-table">
+                            <tr>
+                                <th>生年月日</th>
+                                <td>2026年〇月〇日</td>
+                            </tr>
+                            <tr>
+                                <th>毛色</th>
+                                <td>クリーム</td>
+                            </tr>
+                            <tr>
+                                <th>性別</th>
+                                <td>男の子（♂）</td>
+                            </tr>
+                            <tr>
+                                <th>予想サイズ</th>
+                                <td>タイニーサイズ</td>
+                            </tr>
+                            <tr>
+                                <th>販売価格</th>
+                                <td><span style="font-size: 0.95rem; color: #5a4b41; font-weight: bold;">価格はお問い合わせください</span></td>
+                            </tr>
+                        </table>
+                        <div class="puppy-description">
+                            優しいクリームカラーの優しい男の子。甘えん坊で抱っこされるのが大好きです。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; petit poodle All Rights Reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>
