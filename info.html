@@ -32,7 +32,7 @@
             border: 1px solid var(--border-color);
         }
         
-        /* ヘッダー（小文字表記・リンクなし） */
+        /* 統一ヘッダー */
         header {
             text-align: center;
             padding-bottom: 20px;
@@ -49,6 +49,37 @@
             font-size: 0.85rem;
             color: #666;
             margin-top: 4px;
+        }
+
+        /* ナビゲーションメニュー（indexと統一） */
+        .global-nav {
+            margin-top: 15px;
+        }
+        .global-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .global-nav a {
+            color: var(--main-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            background-color: #fff;
+            transition: all 0.2s ease;
+        }
+        .global-nav a:hover,
+        .global-nav a.active {
+            background-color: var(--main-color);
+            color: #fff;
+            border-color: var(--main-color);
         }
 
         .intro {
@@ -133,9 +164,10 @@
 <body>
 
 <div class="container">
+    <!-- indexと完全に同じヘッダー構造（サブタイトル・ナビゲーション含む） -->
     <header>
         <h1>petit poodle</h1>
-        <p>奈良県の小さなトイプードル専門ブリーダー</p>
+        <p>奈良県のトイプードル専門ブリーダー</p>
         <nav class="global-nav">
             <ul>
                 <li><a href="index.html">ご家族募集中</a></li>
@@ -166,8 +198,8 @@
                 <div class="info-box">
                     <strong>ご記載いただきたい内容：</strong>
                     <ul>
-                        <strong>お名前（フルネーム）、ご住所、お電話番号　</strong>
-                        <strong>ご希望の子犬（子犬の仮名または探しているタイプ）</strong>
+                        <li><strong>お名前（フルネーム）、ご住所、お電話番号</strong></li>
+                        <li><strong>ご希望の子犬（子犬の仮名または探しているタイプ）</strong></li>
                     </ul>
                     <p style="font-size: 0.85rem; color: #5a4b41; margin-top: 10px; line-height: 1.6;">
                         ※当犬舎では、子犬一頭一頭の性格や健康状態、お迎えいただくご家庭の環境を含めて誠実にお話を進めたいと考えております。そのため、**お名前やご住所の記載がない「価格のみ」のお問い合わせにつきましては、ご返信を控えさせていただく場合がございます**。あらかじめご了承ください。<br>
