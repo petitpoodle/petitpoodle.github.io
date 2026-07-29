@@ -146,6 +146,39 @@
             color: var(--accent-color);
         }
 
+        /* 特定商取引法・事業者情報エリア */
+        .tokusho-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px dashed var(--border-color);
+        }
+        .tokusho-title {
+            font-size: 1.2rem;
+            color: var(--main-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .tokusho-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .tokusho-table th {
+            width: 30%;
+            text-align: left;
+            padding: 12px 10px;
+            background-color: #f7f5f2;
+            color: var(--main-color);
+            border-bottom: 1px solid var(--border-color);
+            font-weight: bold;
+        }
+        .tokusho-table td {
+            width: 70%;
+            padding: 12px 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
         footer {
             text-align: center;
             margin-top: 40px;
@@ -158,13 +191,23 @@
         @media (max-width: 600px) {
             .container { padding: 25px 15px; }
             header h1 { font-size: 1.6rem; }
+            .tokusho-table th, .tokusho-table td {
+                display: block;
+                width: 100%;
+            }
+            .tokusho-table th {
+                border-bottom: none;
+                padding-bottom: 4px;
+            }
+            .tokusho-table td {
+                padding-top: 0;
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- indexと完全に同じヘッダー構造（サブタイトル・ナビゲーション含む） -->
     <header>
         <h1>petit poodle</h1>
         <p>奈良県のトイプードル専門ブリーダー</p>
@@ -258,6 +301,37 @@
                     </ul>
                 </div>
             </div>
+        </section>
+
+        <!-- 特定商取引法に基づく表記・第一種動物取扱業者標識 -->
+        <section class="tokusho-section">
+            <h2 class="tokusho-title">特定商取引法に基づく表記 / 動物取扱業標識</h2>
+            <table class="tokusho-table">
+                <tr>
+                    <th>事業所名</th>
+                    <td>petit poodle</td>
+                </tr>
+                <tr>
+                    <th>所在地</th>
+                    <td>奈良県生駒市あすか野南2-2-12</td>
+                </tr>
+                <tr>
+                    <th>登録番号</th>
+                    <td>奈良県登録 第1233002号</td>
+                </tr>
+                <tr>
+                    <th>第一種動物取扱業の種別</th>
+                    <td>販売</td>
+                </tr>
+                <tr>
+                    <th>登録年月日</th>
+                    <td>令和5年6月2日</td>
+                </tr>
+                <tr>
+                    <th>有効期限の末日</th>
+                    <td>令和10年6月1日</td>
+                </tr>
+            </table>
         </section>
     </main>
 
