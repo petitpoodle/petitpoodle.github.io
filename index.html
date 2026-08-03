@@ -196,6 +196,69 @@
             .container { padding: 20px 12px; }
             .puppy-info { padding: 18px; }
         }
+
+        /* ===================================
+           印刷専用スタイル（Print CSS）
+        =================================== */
+        @media print {
+            body {
+                background-color: #fff !important;
+                color: #000 !important;
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .container {
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+
+            /* 不要なナビゲーションを印刷時非表示 */
+            .global-nav {
+                display: none !important;
+            }
+
+            /* カードとはみ出し表示の制御 */
+            .puppy-grid {
+                gap: 25px !important;
+            }
+
+            .puppy-card {
+                display: flex !important;
+                flex-direction: row !important;
+                border: 1px solid var(--border-color) !important;
+                overflow: visible !important;
+                page-break-inside: avoid; /* 途中でカードが切れにくくする */
+            }
+
+            .hero-photo, .puppy-photo {
+                overflow: visible !important;
+            }
+
+            .puppy-photo {
+                min-height: auto !important;
+                max-height: 240px !important;
+                flex: 1 !important;
+            }
+
+            .puppy-info {
+                flex: 1.5 !important;
+                display: block !important;
+                padding: 15px 20px !important;
+            }
+
+            .status-badge {
+                border: 1px solid var(--status-text);
+            }
+
+            footer {
+                margin-top: 30px !important;
+                padding-top: 10px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -238,7 +301,7 @@
                 <div class="puppy-info">
                     <div>
                         <span class="status-badge">ご家族募集中</span>
-                        <div class="puppy-name">仮ネーム　　amoちゃん</div>
+                        <div class="puppy-name">仮ネーム  amoちゃん</div>
                         <p>2026年6月19日生まれ</p>
                         <p>アプリコット</p>
                         <p>女の子</p>
@@ -251,7 +314,7 @@
                 </div>
             </div>
 
-        <!-- 子犬 2頭目 -->
+            <!-- 子犬 2頭目 -->
             <div class="puppy-card">
                 <div class="puppy-photo">
                     <img src="sol001.jpg" alt="そるくん">
@@ -259,7 +322,7 @@
                 <div class="puppy-info">
                     <div>
                         <span class="status-badge">ご家族募集中</span>
-                        <div class="puppy-name">仮ネーム 　solくん</div>
+                        <div class="puppy-name">仮ネーム  solくん</div>
                         <p>2026年6月19日生まれ</p>
                         <p>ペールフォーン</p>
                         <p>男の子</p>
